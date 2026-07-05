@@ -1848,6 +1848,66 @@ textarea.form-control {
   max-width: 600px;
 }
 .footer-legal-simple span { display: block; }
+   /* ===== global header/nav/hero fixes ===== */
+
+/* smaller logo so it does not overlap page title text */
+.brand-logo,
+.brand-logo svg {
+  height: 120px;
+}
+
+.site-header.scrolled .brand-logo,
+.site-header.scrolled .brand-logo svg {
+  height: 72px;
+}
+
+/* mobile logo */
+@media (max-width: 1024px) {
+  .brand-logo,
+  .brand-logo svg {
+    height: 82px;
+  }
+
+  .site-header.scrolled .brand-logo,
+  .site-header.scrolled .brand-logo svg {
+    height: 58px;
+  }
+}
+
+/* give interior page headers more clearance below fixed logo */
+.page-header {
+  padding-block: clamp(10rem, 8rem + 4vw, 13rem) clamp(3rem, 2rem + 3vw, 5rem);
+}
+
+.page-header-inner {
+  padding-top: 1.5rem;
+}
+
+/* make interior page headline about 1.5x smaller */
+.page-header h1 {
+  font-size: clamp(2rem, 1.2rem + 4vw, 4.5rem);
+  line-height: 0.95;
+  max-width: 11ch;
+}
+
+/* homepage hero headline also smaller */
+.hero h1 {
+  font-size: clamp(2rem, 1.2rem + 4vw, 4.5rem);
+  line-height: 0.95;
+  max-width: 12ch;
+}
+
+/* make top navigation tabs larger */
+.nav-menu > li > a,
+.nav-menu > li > button {
+  font-size: 1rem;
+  padding: 0.55rem 0.95rem;
+}
+
+/* dropdown items slightly larger too */
+.nav-dropdown-menu a {
+  font-size: 0.95rem;
+}
 </style>
 <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 <meta property="og:type" content="website">
