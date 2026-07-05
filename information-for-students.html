@@ -1518,23 +1518,42 @@ textarea.form-control {
   gap: 1rem;
   align-items: start;
 }
-.resource-card:hover { border-color: var(--ink); transform: translateY(-2px); }
+.resource-card:hover { 
+  border-color: var(--ink); 
+  transform: translateY(-2px); 
+}
+
 .resource-card-icon {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: var(--ink);
+  background: var(--muted);
   color: var(--white);
   display: grid;
   place-items: center;
   font-size: 1.4rem;
   flex-shrink: 0;
 }
-.resource-card.coral .resource-card-icon { background: var(--coral); }
-.resource-card.teal .resource-card-icon { background: var(--teal); color: var(--ink); }
-.resource-card h4 { font-size: 1rem; margin: 0 0 0.3rem; }
-.resource-card p { font-size: 0.88rem; margin: 0 0 0.5rem; line-height: 1.5; }
 
+.resource-card.coral .resource-card-icon { 
+  background: var(--coral); 
+}
+
+.resource-card.teal .resource-card-icon { 
+  background: var(--teal); 
+  color: var(--ink); 
+}
+
+.resource-card h4 { 
+  font-size: 1rem; 
+  margin: 0 0 0.3rem; 
+}
+
+.resource-card p { 
+  font-size: 0.88rem; 
+  margin: 0 0 0.5rem; 
+  line-height: 1.5; 
+}
 /* Team member with photo */
 .team-card-photo {
   background: var(--white);
