@@ -1902,6 +1902,40 @@ textarea.form-control {
 .nav-dropdown-menu a {
   font-size: 0.95rem;
 }
+
+/* ===== testimonials full-width hero image fix ===== */
+.page-header {
+  position: relative !important;
+  width: 100vw !important;
+  max-width: none !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  min-height: 88vh !important;
+  padding-block: clamp(10rem, 8rem + 4vw, 13rem) clamp(3rem, 2rem + 3vw, 5rem) !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
+}
+
+.page-header-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+}
+
+.page-header-bg img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  transform: none !important;
+}
+
+.page-header .container {
+  position: relative !important;
+  z-index: 2 !important;
+}
 </style>
 <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 <meta property="og:type" content="website">
