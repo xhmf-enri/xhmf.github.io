@@ -1839,6 +1839,61 @@ textarea.form-control {
   max-width: 600px;
 }
 .footer-legal-simple span { display: block; }
+   /* ===== about page/header quick fixes ===== */
+
+/* 1) Make logo smaller so it doesn't overlap the page title area */
+.brand-logo,
+.brand-logo svg {
+  height: 120px;
+}
+
+.site-header.scrolled .brand-logo,
+.site-header.scrolled .brand-logo svg {
+  height: 72px;
+}
+
+/* mobile */
+@media (max-width: 1024px) {
+  .brand-logo,
+  .brand-logo svg {
+    height: 82px;
+  }
+
+  .site-header.scrolled .brand-logo,
+  .site-header.scrolled .brand-logo svg {
+    height: 58px;
+  }
+}
+
+/* 2) Push the page header content lower so it clears the logo */
+.page-header {
+  padding-block: clamp(10rem, 8rem + 4vw, 13rem) clamp(3rem, 2rem + 3vw, 5rem);
+}
+
+.page-header-inner {
+  padding-top: 1.5rem;
+}
+
+/* 3) Make the headline about 1.5x smaller */
+.page-header h1 {
+  color: var(--white);
+  margin-bottom: 1.25rem;
+  font-size: clamp(2rem, 1.2rem + 4vw, 4.5rem);
+  line-height: 0.95;
+  max-width: 10ch;
+}
+
+/* 4) Make the top navigation tabs a bit bigger */
+.nav-menu > li > a,
+.nav-menu > li > button {
+  font-size: 1rem;
+  padding: 0.55rem 0.95rem;
+}
+
+/* optional: make dropdown items a bit bigger too */
+.nav-dropdown-menu a {
+  font-size: 0.95rem;
+}
 </style>
 <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 <meta property="og:type" content="website">
