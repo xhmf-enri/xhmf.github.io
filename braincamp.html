@@ -1908,6 +1908,40 @@ textarea.form-control {
 .nav-dropdown-menu a {
   font-size: 0.95rem;
 }
+   .gallery-item img {
+  cursor: zoom-in;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0,0,0,.9);
+}
+
+.gallery-lightbox.is-open {
+  display: flex;
+}
+
+.gallery-lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.gallery-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+}
 </style>
 <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 <meta property="og:type" content="website">
@@ -2410,29 +2444,85 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const files = await response.json();
 
-    files
+    const imageFiles = files
       .filter(file =>
         file.type === "file" &&
         /\.(jpg|jpeg|png|webp|gif)$/i.test(file.name)
       )
-      .sort((a, b) => a.name.localeCompare(b.name))
-      .forEach((file, index) => {
-        const item = document.createElement("div");
-        item.className = "gallery-item gallery-hidden";
+      .sort((a, b) => b.name.localeCompare(a.name));
 
-        const image = document.createElement("img");
-        image.src = file.download_url;
-        image.alt = `BrainCamp 2026 photo ${index + 1}`;
-        image.loading = "lazy";
+    const fragment = document.createDocumentFragment();
 
-        item.appendChild(image);
-        gallery.appendChild(item);
-      });
+    imageFiles.forEach((file, index) => {
+      const item = document.createElement("div");
+
+      // First 12 new photos appear immediately.
+      // The rest appear after clicking "show more photos."
+      item.className =
+        index < 12
+          ? "gallery-item"
+          : "gallery-item gallery-hidden";
+
+      const image = document.createElement("img");
+      image.src = file.download_url;
+      image.alt = `BrainCamp 2026 photo ${index + 1}`;
+      image.loading = "lazy";
+      image.className = "gallery-lightbox-image";
+
+      // Remove a photo tile if the file cannot be displayed.
+      image.onerror = () => {
+        item.remove();
+      };
+
+      item.appendChild(image);
+      fragment.appendChild(item);
+    });
+
+    // Add all new images before the older hardcoded images.
+    gallery.prepend(fragment);
 
   } catch (error) {
     console.error("Unable to load BrainCamp gallery:", error);
   }
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const lightbox = document.getElementById("galleryLightbox");
+    const lightboxImage = document.getElementById("galleryLightboxImage");
+    const closeButton = lightbox.querySelector(".gallery-lightbox-close");
+
+    document.addEventListener("click", event => {
+        const image = event.target.closest(".gallery-item img");
+
+        if (image) {
+            lightboxImage.src = image.src;
+            lightbox.classList.add("is-open");
+        }
+    });
+
+    closeButton.addEventListener("click", () => {
+        lightbox.classList.remove("is-open");
+    });
+
+    lightbox.addEventListener("click", e => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove("is-open");
+        }
+    });
+});
+</script>
+
+<!-- ADD THE LIGHTBOX HTML AFTER BOTH SCRIPTS -->
+   <div id="galleryLightbox" class="gallery-lightbox" aria-hidden="true">
+  <button
+    type="button"
+    class="gallery-lightbox-close"
+    aria-label="Close enlarged image">
+    ×
+  </button>
+
+  <img id="galleryLightboxImage" src="" alt="">
+</div>
 </body>
 </html>
