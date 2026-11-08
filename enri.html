@@ -2328,62 +2328,219 @@ textarea.form-control {
           </p>
         </div>
       </div>
-      <div style="margin-top:2.5rem;">
-        <div style="
-          display:flex;
-          align-items:center;
-          gap:0.7rem;
-          margin-bottom:1.2rem;
-          color:var(--teal);
-          font-size:0.82rem;
-          font-weight:700;
-          letter-spacing:0.12em;
-          text-transform:uppercase;
-        ">
-          <span style="width:28px; height:1px; background:var(--teal); display:inline-block;"></span>
-          team &amp; supervision
-        </div>
-        <div style="
-          display:grid;
-          grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-          gap:1rem;
-        ">
-          <div style="
-            border:1.5px solid var(--ink);
-            border-radius:18px;
-            padding:1.3rem;
-          ">
-            <p style="margin:0 0 0.45rem 0;">
-              <strong>Head of Data Security</strong>
-            </p>
-            <p style="margin:0;">Ms. Rina Basholli</p>
-          </div>
-          <div style="
-            border:1.5px solid var(--ink);
-            border-radius:18px;
-            padding:1.3rem;
-          ">
-            <p style="margin:0 0 0.45rem 0;">
-              <strong>Graduate Thesis Supervision</strong>
-            </p>
-            <p style="margin:0;">Saura Elena Sahu<br> <em>Harvard University</em></p>
-          </div>
-          <div style="
-            border:1.5px solid var(--ink);
-            border-radius:18px;
-            padding:1.3rem;
-          ">
-            <p style="margin:0 0 0.45rem 0;">
-              <strong>Research Assistants</strong>
-            </p>
-            <p style="margin:0;">
-              Anita Avdiu<br> <em>Tufts University</em><br>
-              Andi Buqa<br> <em>Vassar College</em>
-            </p>
-          </div>
-        </div>
-      </div>
+      
+<style>
+  .enri-team-section {
+    margin-top: 2.5rem;
+  }
+
+  .enri-team-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.5rem;
+    color: var(--teal-deep);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .enri-team-heading::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--teal);
+    flex-shrink: 0;
+  }
+
+  .enri-team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .enri-team-card {
+    border: 1.5px solid var(--ink);
+    border-radius: 18px;
+    padding: 1.6rem;
+    background: rgba(255,255,255,0.12);
+  }
+
+  .enri-team-role {
+    display: block;
+    color: var(--teal-deep);
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .enri-team-name {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 0.65rem;
+  }
+
+  .enri-team-affiliation {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 0.7rem;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  .enri-team-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.35);
+    border: 1px solid rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+
+  .enri-team-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 3px;
+  }
+
+  .enri-team-logo span {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  .enri-team-member + .enri-team-member {
+    padding-top: 1.2rem;
+    margin-top: 1.2rem;
+    border-top: 1px solid rgba(0,0,0,0.10);
+  }
+
+  @media (max-width: 900px) {
+    .enri-team-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .enri-team-card {
+      padding: 1.4rem;
+    }
+  }
+</style>
+
+<div class="enri-team-section">
+
+  <div class="enri-team-heading">
+    team &amp; supervision
+  </div>
+
+  <div class="enri-team-grid">
+
+    <!-- DATA SECURITY -->
+    <div class="enri-team-card">
+
+      <span class="enri-team-role">
+        Head of Data Security
+      </span>
+
+      <strong class="enri-team-name">
+        Rina Basholli
+      </strong>
+
     </div>
+
+    <!-- GRADUATE THESIS SUPERVISION -->
+    <div class="enri-team-card">
+
+      <span class="enri-team-role">
+        Graduate Thesis Supervision
+      </span>
+
+      <strong class="enri-team-name">
+        Saura Elena Sahu
+      </strong>
+
+      <div class="enri-team-affiliation">
+        <div class="enri-team-logo">
+          <!-- Harvard logo goes here:
+          <img src="assets/harvard-logo.png"
+               alt="Harvard University logo">
+          -->
+          <span>HU</span>
+        </div>
+
+        <span>Harvard University</span>
+      </div>
+
+    </div>
+
+    <!-- RESEARCH ASSISTANTS -->
+    <div class="enri-team-card">
+
+      <span class="enri-team-role">
+        Research Assistants
+      </span>
+
+      <!-- Anita -->
+      <div class="enri-team-member">
+
+        <strong class="enri-team-name">
+          Anita Avdiu
+        </strong>
+
+        <div class="enri-team-affiliation">
+          <div class="enri-team-logo">
+            <!-- Tufts logo goes here:
+            <img src="assets/tufts-logo.png"
+                 alt="Tufts University logo">
+            -->
+            <span>TU</span>
+          </div>
+
+          <span>Tufts University</span>
+        </div>
+
+      </div>
+
+      <!-- Andi -->
+      <div class="enri-team-member">
+
+        <strong class="enri-team-name">
+          Andi Buqa
+        </strong>
+
+        <div class="enri-team-affiliation">
+          <div class="enri-team-logo">
+            <!-- Vassar logo goes here:
+            <img src="assets/vassar-logo.png"
+                 alt="Vassar College logo">
+            -->
+            <span>VC</span>
+          </div>
+
+          <span>Vassar College</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
   </div>
   </section>
 
