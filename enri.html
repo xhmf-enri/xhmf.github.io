@@ -2076,183 +2076,239 @@ textarea.form-control {
           <strong>Founder and Principal Researcher:</strong> Dr. Egzona Morina
         </p>
        
-<div style="margin-top:2rem;">
 
-  <!-- Section heading -->
-  <div style="
-    display:flex;
-    align-items:center;
-    gap:0.7rem;
-    margin-bottom:1.5rem;
-    color:var(--coral-deep);
-    font-size:0.82rem;
-    font-weight:700;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-  ">
-    <span style="
-      width:28px;
-      height:1px;
-      background:var(--coral-deep);
-      display:inline-block;
-      flex-shrink:0;
-    "></span>
+<style>
+  .enri-affiliations {
+    margin-top: 2rem;
+  }
+
+  .enri-affiliations-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.5rem;
+    color: var(--coral-deep);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .enri-affiliations-heading::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--coral-deep);
+    flex-shrink: 0;
+  }
+
+  .enri-affiliation {
+    display: grid;
+    grid-template-columns: 78px minmax(0, 1fr);
+    align-items: start;
+    gap: 1.25rem;
+    padding: 1.3rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+  }
+
+  .enri-affiliation:last-child {
+    border-bottom: none;
+  }
+
+  .enri-affiliation-logo {
+    width: 78px;
+    height: 78px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 8px;
+  }
+
+  .enri-affiliation-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .enri-affiliation-logo span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+
+  .enri-affiliation-date {
+    display: block;
+    color: var(--coral-deep);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .enri-affiliation-role {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.35rem;
+    color: var(--ink);
+  }
+
+  .enri-affiliation-institution {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 600px) {
+    .enri-affiliation {
+      grid-template-columns: 58px minmax(0, 1fr);
+      gap: 0.9rem;
+    }
+
+    .enri-affiliation-logo {
+      width: 58px;
+      height: 58px;
+      padding: 5px;
+    }
+
+    .enri-affiliation-role {
+      font-size: 1.05rem;
+    }
+  }
+</style>
+
+<div class="enri-affiliations">
+
+  <div class="enri-affiliations-heading">
     academic affiliations, research &amp; training
   </div>
 
   <!-- NASA STAR -->
-  <div style="
-    padding:1rem 0;
-    border-bottom:1px solid rgba(0,0,0,0.10);
-  ">
-    <span style="
-      display:block;
-      color:var(--coral-deep);
-      font-size:0.8rem;
-      font-weight:600;
-      margin-bottom:0.3rem;
-    ">2026–2027</span>
+  <div class="enri-affiliation">
 
-    <strong style="
-      display:block;
-      font-family:var(--font-display);
-      font-size:1.2rem;
-      margin-bottom:0.3rem;
-    ">NASA STAR-7 Participant</strong>
+    <div class="enri-affiliation-logo">
+      <!-- Replace the span below with:
+      <img src="assets/nasa-logo.png" alt="NASA logo">
+      -->
+      <img src="nasa.png" alt="NASA logo">
+    </div>
 
-    <span style="
-      display:block;
-      color:var(--ink-soft);
-      font-size:0.95rem;
-      line-height:1.5;
-    ">
-      Spaceflight Technology, Applications, and Research
-      (STAR) Program, NASA Biological and Physical Sciences.
-    </span>
+    <div>
+      <span class="enri-affiliation-date">2026–2027</span>
+      <strong class="enri-affiliation-role">
+        NASA STAR-7 Participant
+      </strong>
+      <span class="enri-affiliation-institution">
+        Spaceflight Technology, Applications, and Research
+        (STAR) Program, NASA Biological and Physical Sciences.
+      </span>
+    </div>
+
   </div>
 
-  <!-- Research collaboration -->
-  <div style="
-    padding:1rem 0;
-    border-bottom:1px solid rgba(0,0,0,0.10);
-  ">
-    <span style="
-      display:block;
-      color:var(--coral-deep);
-      font-size:0.8rem;
-      font-weight:600;
-      margin-bottom:0.3rem;
-    ">2026–Present</span>
+  <!-- MGH / HARVARD MEDICAL SCHOOL -->
+  <div class="enri-affiliation">
 
-    <strong style="
-      display:block;
-      font-family:var(--font-display);
-      font-size:1.2rem;
-      margin-bottom:0.3rem;
-    ">Research Collaborator</strong>
+    <div class="enri-affiliation-logo">
+      <!-- Replace the span below with:
+      <img src="assets/mgh-logo.png" alt="Massachusetts General Hospital logo">
+      -->
+       <img src="vlad.png" alt="NASA logo">
+    </div>
 
-    <span style="
-      display:block;
-      color:var(--ink-soft);
-      font-size:0.95rem;
-      line-height:1.5;
-    ">
-      Laboratory for Neuroimaging and Integrative Physiology,
-      Massachusetts General Hospital / Harvard Medical School
-      (Dr. Vladimir Ivkovic).
-    </span>
+    <div>
+      <span class="enri-affiliation-date">2026–Present</span>
+      <strong class="enri-affiliation-role">
+        Research Collaborator
+      </strong>
+      <span class="enri-affiliation-institution">
+        Laboratory for Neuroimaging and Integrative Physiology,
+        Massachusetts General Hospital / Harvard Medical School
+        (Dr. Vladimir Ivkovic).
+      </span>
+    </div>
+
   </div>
 
-  <!-- Harvard affiliated faculty -->
-  <div style="
-    padding:1rem 0;
-    border-bottom:1px solid rgba(0,0,0,0.10);
-  ">
-    <span style="
-      display:block;
-      color:var(--coral-deep);
-      font-size:0.8rem;
-      font-weight:600;
-      margin-bottom:0.3rem;
-    ">2026–Present</span>
+  <!-- HARVARD T.H. CHAN -->
+  <div class="enri-affiliation">
 
-    <strong style="
-      display:block;
-      font-family:var(--font-display);
-      font-size:1.2rem;
-      margin-bottom:0.3rem;
-    ">Affiliated Faculty</strong>
+    <div class="enri-affiliation-logo">
+      <!-- Replace the span below with:
+      <img src="assets/harvard-chan-logo.png" alt="Harvard T.H. Chan School of Public Health logo">
+      -->
+       <img src="change.png" alt="NASA logo">
+    </div>
 
-    <span style="
-      display:block;
-      color:var(--ink-soft);
-      font-size:0.95rem;
-      line-height:1.5;
-    ">
-      Harvard T.H. Chan School of Public Health,
-      Center for Climate, Health, and the Global Environment
-      (C-CHANGE).
-    </span>
+    <div>
+      <span class="enri-affiliation-date">2026–Present</span>
+      <strong class="enri-affiliation-role">
+        Affiliated Faculty
+      </strong>
+      <span class="enri-affiliation-institution">
+        Harvard T.H. Chan School of Public Health,
+        Center for Climate, Health, and the Global Environment
+        (C-CHANGE).
+      </span>
+    </div>
+
   </div>
 
-  <!-- Harvard thesis supervision -->
-  <div style="
-    padding:1rem 0;
-    border-bottom:1px solid rgba(0,0,0,0.10);
-  ">
-    <span style="
-      display:block;
-      color:var(--coral-deep);
-      font-size:0.8rem;
-      font-weight:600;
-      margin-bottom:0.3rem;
-    ">2025–Present</span>
+  <!-- HARVARD GRADUATE RESEARCH -->
+  <div class="enri-affiliation">
 
-    <strong style="
-      display:block;
-      font-family:var(--font-display);
-      font-size:1.2rem;
-      margin-bottom:0.3rem;
-    ">Master's Thesis Supervisor</strong>
+    <div class="enri-affiliation-logo">
+      <!-- Replace the span below with:
+      <img src="assets/harvard-logo.png" alt="Harvard University logo">
+      -->
+       <img src="dce.png" alt="NASA logo">
+    </div>
 
-    <span style="
-      display:block;
-      color:var(--ink-soft);
-      font-size:0.95rem;
-      line-height:1.5;
-    ">
-      Harvard University, graduate research supervision.
-    </span>
+    <div>
+      <span class="enri-affiliation-date">2025–Present</span>
+      <strong class="enri-affiliation-role">
+        Master's Thesis Supervisor
+      </strong>
+      <span class="enri-affiliation-institution">
+        Harvard University, graduate research supervision.
+      </span>
+    </div>
+
   </div>
 
-  <!-- Harvard neurobiology teaching -->
-  <div style="padding:1rem 0 0.3rem;">
-    <span style="
-      display:block;
-      color:var(--coral-deep);
-      font-size:0.8rem;
-      font-weight:600;
-      margin-bottom:0.3rem;
-    ">2024–2026</span>
+  <!-- HARVARD NEUROBIOLOGY TEACHING -->
+  <div class="enri-affiliation">
 
-    <strong style="
-      display:block;
-      font-family:var(--font-display);
-      font-size:1.2rem;
-      margin-bottom:0.3rem;
-    ">Instructor in Neurobiology</strong>
+    <div class="enri-affiliation-logo">
+      <!-- Replace the span below with:
+      <img src="assets/harvard-logo.png" alt="Harvard University logo">
+      -->
+       <img src="dce.png" alt="NASA logo">
+    </div>
 
-    <span style="
-      display:block;
-      color:var(--ink-soft);
-      font-size:0.95rem;
-      line-height:1.5;
-    ">
-      Harvard University, Division of Continuing Education.
-    </span>
+    <div>
+      <span class="enri-affiliation-date">2024–2026</span>
+      <strong class="enri-affiliation-role">
+        Instructor in Neurobiology
+      </strong>
+      <span class="enri-affiliation-institution">
+        Harvard University, Division of Continuing Education.
+      </span>
+    </div>
+
   </div>
 
 </div>
+
 
         <div style="
           margin-top:2rem;
